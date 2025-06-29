@@ -1,20 +1,7 @@
 version: '3.8'
 
 services:
-  backend:
-    build:
-      context: ./backend
-    ports:
-      - "8080:8080"
-    depends_on:
-      - db
-    environment:
-      - username=admin
-      - password=password
-      - host=host.docker.internal
-    command: sh -c "npm run db:reset:production && npm run start"
-    networks:
-      - app_network
+
 
   frontend:
     build:
